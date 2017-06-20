@@ -29,6 +29,16 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <!-- import ajax library -->
+    <!--call stock price-->
+    <script>
+        $("button").click(function(){
+                            $.ajax({url: "/getStockPrice/00005", success: function(result){
+                            $("#td1").html(result);
+                            }});
+    </script>
+
 </head>
 
 <body>
@@ -124,7 +134,7 @@
                     <tbody>
                     <tr>
                         <td>Stock ID :<input type="text" name="stock1"></td>
-                        <td>  </td>
+                        <td id="td1"><button>Get Stock Price</button></td>
                         <td>ipsum</td>
                         <td>dolor</td>
                         <td>sit</td>
